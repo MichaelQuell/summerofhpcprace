@@ -9,7 +9,7 @@
 
 
 
-double pi2(int n){
+double pi2(unsigned int n){
 	double nn=(double)n;
 	double ret=0;
 	unsigned int i;
