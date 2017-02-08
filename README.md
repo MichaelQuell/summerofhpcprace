@@ -1,4 +1,5 @@
-# summerofhpcprace
+# summer of hpc prace
+### http://summerofhpc.prace-ri.eu/
 
 implements the Code Tests to apply summer of hpc prace 2017
 
