@@ -13,7 +13,7 @@ double pi(unsigned int n){
 	return 4.0/n*ret;
 }
 //optimized implementation
-double pi2(int n){
+double pi2(unsigned int n){
 	double nn=(double)n;
 	double ret=0;
 	unsigned int i;
