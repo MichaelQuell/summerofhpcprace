@@ -1,11 +1,10 @@
 #include<stdio.h>
 #include<time.h>
-#include<limits.h>
 #include<math.h>
 
 #define MY_PI (3.14159265358979323846)
 #define MAX(a,b) (((a)>(b))?(a):(b))
-#define NN (10000)
+#define NN (10000) //number of runs for thr timing
 
 
 
@@ -22,7 +21,7 @@ double pi2(unsigned int n){
 
 unsigned int c_nmin(double tol){
 	unsigned int i;
-	for(i=1;i<UINT_MAX;i++){
+	for(i=1;i>0;i++){
 		if(pi2(i)-MY_PI<tol){
 			return i;
 		}
@@ -51,8 +50,13 @@ int main(int argc, char* argv[]){
 	}
 	end = clock() ;
 	double elapsed_time2 = (end-start)/(double)CLOCKS_PER_SEC;
-	if(i!=j){printf("%d %d\n",i,j);}//return -1;}
-	printf("N_min = %d Improved: %5.4es Naive: %5.4es Speedup: %6.3f err(N_min) = %20.16e\n",i,elapsed_time/NN,elapsed_time2/NN,elapsed_time2/elapsed_time,pi2(i)-MY_PI);
+	if(i!=j){
+		printf("Improved method failed! %d!=%d\n",i,j);
+	}
+	printf("N_min = %d Improved: %5.4es Naive: %5.4es"
+		" Speedup: %6.3f err(N_min) = %20.16e\n",
+		i,elapsed_time/NN,elapsed_time2/NN,
+		elapsed_time2/elapsed_time,pi2(i)-MY_PI);
 	//printf("EX=%d\n",c_nmin(tol));
 	return 0;
 }

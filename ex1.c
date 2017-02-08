@@ -1,5 +1,5 @@
 #include<stdio.h>
-
+#include<math.h>
 #define MY_PI 3.14159265358979323846
 #define COUNT_OF(x) (sizeof(x)/sizeof(x[0]))
 
@@ -29,7 +29,7 @@ int main(int argc, char* argv[]){
 	unsigned int N[]={1,2,10,50,100,500,628478};
 	for(i=0;i<COUNT_OF(N);i++){
 		printf("pi(%d) =% 20.16e, err(%d) = % 20.16e\n",
-					N[i],pi2(N[i]),N[i],pi2(N[i])-MY_PI);
+					N[i],pi2(N[i]),N[i],fabs(pi2(N[i])-MY_PI));
 	}
 	return 0;
 }

@@ -1,5 +1,4 @@
 #include<stdio.h>
-#include<limits.h>
 #include<math.h>
 
 #define MY_PI 3.14159265358979323846
@@ -17,7 +16,7 @@ double pi2(unsigned int n){
 
 unsigned int c_nmin(double tol){
 	unsigned int i;
-	for(i=1;i<UINT_MAX;i++){
+	for(i=1;i>0;i++){
 		double err=fabs(pi2(i)-MY_PI);
 		//printf("%10d %20.16e\n",i,err);
 		if(err<tol){
@@ -26,7 +25,6 @@ unsigned int c_nmin(double tol){
 	}
 	return 0;
 }
-
 
 int main(int argc, char* argv[]){
 	double tol=1e-6;

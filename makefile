@@ -5,7 +5,7 @@ CLFAGS= -O3
 all: clean ex1 ex2 ex3
 
 ex1: ex1.c
-	gcc $(CLFAGS) ex1.c -o ex1
+	gcc $(CLFAGS) ex1.c -o ex1 -lm
 	
 ex2: ex2.c
 	gcc $(CLFAGS) ex2.c -o ex2 -lm
